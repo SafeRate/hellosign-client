@@ -1,7 +1,13 @@
 import React from "react";
+import { Route, Routes } from "react-router-dom";
+import PurchaseContract from "./PurchaseContract/PurchaseContract";
 
 const App = () => {
-  return <div>Hello from App.tsx!</div>;
+  return (
+    <Routes>
+      <Route path="/" element={<PurchaseContract />}></Route>
+    </Routes>
+  );
 };
 
 export default App;

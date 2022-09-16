@@ -5,9 +5,9 @@ export const PurchaseContractSchema: any = {
   type: "object",
   properties: {
     section1: {
-      title: "Section 1 - Property Information",
+      title: "",
       type: "object",
-      required: ["propertyAddress", "propertyPIN", "purchasePrice"],
+      required: ["propertyAddress", "propertyPIN"],
       properties: {
         propertyAddress: {
           type: "string",
@@ -20,7 +20,6 @@ export const PurchaseContractSchema: any = {
         squareFootage: {
           type: "string",
           title: "Square Footage",
-          maxLength: "8",
         },
         parkingIndoor: {
           type: "boolean",
@@ -73,7 +72,7 @@ export const PurchaseContractSchema: any = {
       },
     },
     section2: {
-      title: "Section 2 - Fixtures and Personal Property",
+      title: "",
       type: "object",
       properties: {
         hasRefrigerator: {
@@ -83,7 +82,6 @@ export const PurchaseContractSchema: any = {
         },
         refrigeratorText: {
           type: "string",
-          maxLength: "10",
           title: "",
         },
         hasOven: {
@@ -93,7 +91,6 @@ export const PurchaseContractSchema: any = {
         },
         ovenText: {
           type: "string",
-          maxLength: "10",
           title: "",
         },
         hasMicrowave: {
@@ -103,7 +100,6 @@ export const PurchaseContractSchema: any = {
         },
         microwaveText: {
           type: "string",
-          maxLength: "10",
           title: "",
         },
         hasDishwasher: {
@@ -113,7 +109,6 @@ export const PurchaseContractSchema: any = {
         },
         dishwasherText: {
           type: "string",
-          maxLength: "10",
           title: "",
         },
         hasGarbageDisposal: {
@@ -123,7 +118,6 @@ export const PurchaseContractSchema: any = {
         },
         garbageDisposalText: {
           type: "string",
-          maxLength: "10",
           title: "",
         },
         hasTrashCompactor: {
@@ -133,7 +127,6 @@ export const PurchaseContractSchema: any = {
         },
         trashCompactorText: {
           type: "string",
-          maxLength: "10",
           title: "",
         },
         hasWasher: {
@@ -143,7 +136,6 @@ export const PurchaseContractSchema: any = {
         },
         washerText: {
           type: "string",
-          maxLength: "10",
           title: "",
         },
         hasDryer: {
@@ -153,7 +145,6 @@ export const PurchaseContractSchema: any = {
         },
         dryerText: {
           type: "string",
-          maxLength: "10",
           title: "",
         },
         hasWaterSoftener: {
@@ -163,7 +154,6 @@ export const PurchaseContractSchema: any = {
         },
         waterSoftenerText: {
           type: "string",
-          maxLength: "10",
           title: "",
         },
         hasSumpPump: {
@@ -173,7 +163,6 @@ export const PurchaseContractSchema: any = {
         },
         sumpPumpText: {
           type: "string",
-          maxLength: "10",
           title: "",
         },
         hasSmokeDetectors: {
@@ -183,7 +172,6 @@ export const PurchaseContractSchema: any = {
         },
         smokeDetectorsText: {
           type: "string",
-          maxLength: "10",
           title: "",
         },
         hasIntercomSystem: {
@@ -192,7 +180,6 @@ export const PurchaseContractSchema: any = {
         },
         intercomSystemText: {
           type: "string",
-          maxLength: "10",
           title: "",
         },
         hasSecuritySystem: {
@@ -201,7 +188,6 @@ export const PurchaseContractSchema: any = {
         },
         securitySystemText: {
           type: "string",
-          maxLength: "10",
           title: "",
         },
         securitySystemRented: {
@@ -218,7 +204,6 @@ export const PurchaseContractSchema: any = {
         },
         satelliteDishText: {
           type: "string",
-          maxLength: "10",
           title: "",
         },
         hasTv: {
@@ -227,7 +212,6 @@ export const PurchaseContractSchema: any = {
         },
         tvText: {
           type: "string",
-          maxLength: "10",
           title: "",
         },
         hasTvAntenna: {
@@ -236,7 +220,6 @@ export const PurchaseContractSchema: any = {
         },
         tvAntennaText: {
           type: "string",
-          maxLength: "10",
           title: "",
         },
         hasMultimediaEquipment: {
@@ -245,7 +228,6 @@ export const PurchaseContractSchema: any = {
         },
         multimediaEquipmentText: {
           type: "string",
-          maxLength: "10",
           title: "",
         },
         hasStereo: {
@@ -254,7 +236,6 @@ export const PurchaseContractSchema: any = {
         },
         stereoText: {
           type: "string",
-          maxLength: "10",
           title: "",
         },
         hasCentralAirConditioner: {
@@ -263,7 +244,6 @@ export const PurchaseContractSchema: any = {
         },
         centralAirConditionerText: {
           type: "string",
-          maxLength: "10",
           title: "",
         },
         hasWindowAirConditioner: {
@@ -272,7 +252,6 @@ export const PurchaseContractSchema: any = {
         },
         windowAirConditionerText: {
           type: "string",
-          maxLength: "10",
           title: "",
         },
         hasElectronicAirFilter: {
@@ -281,7 +260,6 @@ export const PurchaseContractSchema: any = {
         },
         electronicAirFilterText: {
           type: "string",
-          maxLength: "10",
           title: "",
         },
         hasCentralHumidifier: {
@@ -290,7 +268,6 @@ export const PurchaseContractSchema: any = {
         },
         centralHumidifierText: {
           type: "string",
-          maxLength: "10",
           title: "",
         },
         hasLightingFixtures: {
@@ -300,7 +277,6 @@ export const PurchaseContractSchema: any = {
         },
         lightningFixturesText: {
           type: "string",
-          maxLength: "10",
           title: "",
         },
         hasElectronicGarageDoors: {
@@ -309,13 +285,11 @@ export const PurchaseContractSchema: any = {
         },
         garageDoorWithText: {
           type: "string",
-          maxLength: "10",
           title: "Garage Door Remote Units",
         },
         remoteUnitsText: {
           type: "string",
           title: "Garage Doors Description",
-          maxLength: "10",
         },
         hasTackedDownCarpeting: {
           type: "boolean",
@@ -323,7 +297,6 @@ export const PurchaseContractSchema: any = {
         },
         tackedDownCarpetingText: {
           type: "string",
-          maxLength: "10",
           title: "",
         },
         hasOtherEquipment: {
@@ -341,7 +314,6 @@ export const PurchaseContractSchema: any = {
         },
         fireplaceScreenText: {
           type: "string",
-          maxLength: "10",
           title: "",
         },
         hasFireplaceGasLog: {
@@ -350,7 +322,6 @@ export const PurchaseContractSchema: any = {
         },
         fireplaceGasLogText: {
           type: "string",
-          maxLength: "10",
           title: "",
         },
         hasFirewood: {
@@ -359,7 +330,6 @@ export const PurchaseContractSchema: any = {
         },
         firewoodText: {
           type: "string",
-          maxLength: "10",
           title: "",
         },
         hasAttachedGasGrill: {
@@ -368,7 +338,6 @@ export const PurchaseContractSchema: any = {
         },
         attachedGasGrillText: {
           type: "string",
-          maxLength: "10",
           title: "",
         },
         hasExistingStorms: {
@@ -377,7 +346,6 @@ export const PurchaseContractSchema: any = {
         },
         existingStormsText: {
           type: "string",
-          maxLength: "10",
           title: "",
         },
         hasWindowTreatments: {
@@ -386,7 +354,6 @@ export const PurchaseContractSchema: any = {
         },
         windowTreatmentsText: {
           type: "string",
-          maxLength: "10",
           title: "",
         },
         hasHomeWarranty: {
@@ -395,7 +362,6 @@ export const PurchaseContractSchema: any = {
         },
         homeWarrantyText: {
           type: "string",
-          maxLength: "10",
           title: "",
         },
         hasBuiltInShelves: {
@@ -404,7 +370,6 @@ export const PurchaseContractSchema: any = {
         },
         builtInShelvesText: {
           type: "string",
-          maxLength: "10",
           title: "",
         },
         hasCeilingFan: {
@@ -413,7 +378,6 @@ export const PurchaseContractSchema: any = {
         },
         ceilingText: {
           type: "string",
-          maxLength: "10",
           title: "",
         },
         hasRadiatorCovers: {
@@ -422,7 +386,6 @@ export const PurchaseContractSchema: any = {
         },
         radiatorCoversText: {
           type: "string",
-          maxLength: "10",
           title: "",
         },
         hasVegetation: {
@@ -431,7 +394,6 @@ export const PurchaseContractSchema: any = {
         },
         vegetationText: {
           type: "string",
-          maxLength: "10",
           title: "",
         },
         hasOutdoorPlayset: {
@@ -444,18 +406,16 @@ export const PurchaseContractSchema: any = {
         },
         otherTransfers: {
           type: "string",
-          maxLength: "10",
           title: "Seller also transfers the following",
         },
         exclusions: {
           type: "string",
-          maxLength: "10",
           title: "Sellers exclude the items",
         },
       },
     },
     section3: {
-      title: "Section 3 - Purchase Price",
+      title: "",
       type: "object",
       required: ["purchasePrice"],
       properties: {
@@ -468,7 +428,7 @@ export const PurchaseContractSchema: any = {
       },
     },
     section4: {
-      title: "Section 4 - Earnest Money",
+      title: "",
       type: "object",
       required: [
         "escrowee",
@@ -517,7 +477,7 @@ export const PurchaseContractSchema: any = {
       },
     },
     section5: {
-      title: "Section 5 - Mortgage Contingency",
+      title: "",
       type: "object",
       required: [],
       properties: {
@@ -554,7 +514,7 @@ export const PurchaseContractSchema: any = {
       },
     },
     section6: {
-      title: "Section 6 - Closing Cost Credit to Buyer from Seller",
+      title: "",
       type: "object",
       required: [],
       properties: {
@@ -570,7 +530,7 @@ export const PurchaseContractSchema: any = {
       },
     },
     section7: {
-      title: "Section 7 - Closing",
+      title: "",
       type: "object",
       required: ["closingDate"],
       properties: {
@@ -582,7 +542,7 @@ export const PurchaseContractSchema: any = {
       },
     },
     section8: {
-      title: "Section 8 - Possession",
+      title: "",
       type: "object",
       required: [],
       properties: {
@@ -593,7 +553,7 @@ export const PurchaseContractSchema: any = {
       },
     },
     section10: {
-      title: "Section - Real Estate Taxes",
+      title: "",
       type: "object",
       required: ["propertyTaxYear", "propertyTaxAmount"],
       properties: {
@@ -641,7 +601,7 @@ export const PurchaseContractSchema: any = {
       },
     },
     section11: {
-      title: "Section 11 - Homeowner's Association",
+      title: "",
       type: "object",
       required: [
         "hoaAssessment",
@@ -676,7 +636,7 @@ export const PurchaseContractSchema: any = {
       },
     },
     section12: {
-      title: "Section 12 - Disclosures",
+      title: "",
       type: "object",
       required: [],
       properties: {
@@ -703,7 +663,7 @@ export const PurchaseContractSchema: any = {
       },
     },
     section14: {
-      title: "Section 14 - Attorney Modification",
+      title: "",
       type: "object",
       required: ["attorneyApprovalDays"],
       properties: {
@@ -715,7 +675,7 @@ export const PurchaseContractSchema: any = {
       },
     },
     section15: {
-      title: "Section 15 - Inspection",
+      title: "",
       type: "object",
       required: ["attorneyApprovalDays"],
       properties: {
@@ -727,7 +687,7 @@ export const PurchaseContractSchema: any = {
       },
     },
     section16: {
-      title: "Section 16 - General Provisions, Riders and Addendums",
+      title: "",
       type: "object",
       required: ["offerDate", "acceptanceDate"],
       properties: {
@@ -777,7 +737,7 @@ export const PurchaseContractSchema: any = {
         mortgageLenderEmail: {
           type: "string",
           title: "Mortgage email",
-          default: "team@saferate.com",
+          default: "60654",
         },
       },
     },

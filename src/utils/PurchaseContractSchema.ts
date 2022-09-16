@@ -737,7 +737,7 @@ export const PurchaseContractSchema: any = {
         mortgageLenderEmail: {
           type: "string",
           title: "Mortgage email",
-          default: "60654",
+          default: "team@saferate.com",
         },
       },
     },

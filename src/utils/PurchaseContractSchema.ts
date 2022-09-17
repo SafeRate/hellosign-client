@@ -462,7 +462,7 @@ export const PurchaseContractSchema: any = {
           enum: ["%", "$"],
         },
         finalEarnestMoneyAmount: {
-          title: "",
+          title: "Final earnest money number",
           type: "number",
         },
         finalEarnestMoneyBusinessDays: {

@@ -191,12 +191,12 @@ export const PurchaseContractSchema: any = {
           title: "",
         },
         securitySystemRented: {
-          type: "boolean",
-          title: "Security System Rented?",
+          type: "string",
+          title: "System is rented",
         },
         securitySystemOwned: {
           type: "boolean",
-          title: "Security Owned?",
+          title: "Sytem is owned",
         },
         hasSatelliteDish: {
           type: "boolean",
@@ -299,14 +299,10 @@ export const PurchaseContractSchema: any = {
           type: "string",
           title: "",
         },
-        hasOtherEquipment: {
-          type: "boolean",
-          title: "Other Equipment?",
-        },
         otherEquipmentText: {
           type: "string",
           maxLength: "30",
-          title: "",
+          title: "Other equipment?",
         },
         hasFireplaceScreen: {
           type: "boolean",

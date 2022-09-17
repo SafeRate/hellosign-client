@@ -2,13 +2,6 @@ import React, { useReducer, useState } from "react";
 import { PurchaseContractNav } from "./PurchaseContractNav";
 import { PurchaseContractSection } from "./PurchaseContractSection";
 
-const uiSchema = {
-  "ui:widget": "checkboxes",
-  "ui:options": {
-    inline: true,
-  },
-};
-
 export type SectionReductionAction = {
   section: string;
 };

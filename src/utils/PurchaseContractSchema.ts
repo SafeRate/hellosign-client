@@ -487,7 +487,7 @@ export const PurchaseContractSchema: any = {
           enum: ["% of purchase price", "$ amount"],
         },
         loanAmount: {
-          title: "",
+          title: "Loan $ amount or % of purchase price",
           type: "number",
         },
         mortgageInterestRate: {
@@ -514,12 +514,12 @@ export const PurchaseContractSchema: any = {
       required: [],
       properties: {
         closingCostType: {
-          title: "Loan amount of type",
+          title: "Closing Cost credit type",
           type: "string",
           enum: ["% of purchase price", "$ amount"],
         },
         closingCostAmount: {
-          title: "",
+          title: "Closing cost credit $ amount or % of purchase price",
           type: "number",
         },
       },

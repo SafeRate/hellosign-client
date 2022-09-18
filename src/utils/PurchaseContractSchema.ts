@@ -434,7 +434,6 @@ export const PurchaseContractSchema: any = {
         "notAcceptedDayMonth",
         "finalEarnestMoneyType",
         "finalEarnestMoneyAmount",
-        "finalEarnestMoneyBusinessDays",
       ],
       properties: {
         escrowee: {
@@ -599,11 +598,7 @@ export const PurchaseContractSchema: any = {
     section11: {
       title: "",
       type: "object",
-      required: [
-        "hoaAssessment",
-        "specialAssessmentYes",
-        "hoaDocumentsDueDays",
-      ],
+      required: ["hoaAssessment", "hoaDocumentsDueDays"],
       properties: {
         hoaAssessment: {
           title: "Homeowner's association assessment ($)",

@@ -1,14 +1,16 @@
 import { FormControl, FormLabel, Select } from "@chakra-ui/react";
-import React from "react";
+import React, { Dispatch } from "react";
+import { Action, ActionType, PurchaseContractData } from "./PurchaseContract";
 
 type PurchaseContractNavArgs = {
-  currentSection: string;
-  setSection: React.Dispatch<React.SetStateAction<string>>;
+  state: PurchaseContractData;
+  dispatch: Dispatch<Action>;
 };
 
 export const PurchaseContractNav = (args: PurchaseContractNavArgs) => {
-  const currentSection = args.currentSection;
-  const setSection = args.setSection;
+  const state = args.state;
+  const dispatch = args.dispatch;
+  const currentSection = state.currentSection;
 
   return (
     <FormControl>
@@ -16,23 +18,60 @@ export const PurchaseContractNav = (args: PurchaseContractNavArgs) => {
       <Select
         value={currentSection}
         onChange={(e) => {
-          setSection(e.target.value);
+          dispatch({
+            action: ActionType.ChangeSection,
+            data: e.target.value,
+          });
         }}
       >
-        <option value="1">1. Property Information</option>
-        <option value="2">2. Fixtures and Personal Property</option>
-        <option value="3">3. Purchase Price</option>
-        <option value="4">4. Earnest Money</option>
-        <option value="5">5. Mortgage Contingency</option>
-        <option value="6">6. Closing Cost Credit to Buyer from Seller</option>
-        <option value="7">7. Closing</option>
-        <option value="8">8. Possession</option>
-        <option value="1">10. Real Estate Taxes</option>
-        <option value="11">11. Homeowner's Association</option>
-        <option value="12">12. Disclosures</option>
-        <option value="14">14. Attorney Modification</option>
-        <option value="15">15. Inspection</option>
-        <option value="16">16. General Provision, Riders, Addendums</option>
+        <option value="1">
+          1. Property Information
+          {state.section1Complete ? " (✓)" : null}
+        </option>
+        <option value="2">
+          2. Fixtures and Personal Property
+          {state.section2Complete ? " (✓)" : null}
+        </option>
+        <option value="3">
+          3. Purchase Price
+          {state.section3Complete ? " (✓)" : null}
+        </option>
+        <option value="4">
+          4. Earnest Money {state.section4Complete ? " (✓)" : null}
+        </option>
+        <option value="5">
+          5. Mortgage Contingency {state.section5Complete ? " (✓)" : null}
+        </option>
+        <option value="6">
+          6. Closing Cost Credit to Buyer from Seller{" "}
+          {state.section6Complete ? " (✓)" : null}
+        </option>
+        <option value="7">
+          7. Closing {state.section7Complete ? " (✓)" : null}
+        </option>
+        <option value="8">
+          8. Possession {state.section8Complete ? " (✓)" : null}
+        </option>
+        <option value="10">
+          10. Real Estate Taxes {state.section10Complete ? " (✓)" : null}
+        </option>
+        <option value="11">
+          11. Homeowner's Association {state.section11Complete ? " (✓)" : null}
+        </option>
+        <option value="12">
+          12. Disclosures {state.section12Complete ? " (✓)" : null}
+        </option>
+        <option value="14">
+          14. Attorney Modification {state.section14Complete ? " (✓)" : null}
+        </option>
+        <option value="15">
+          15. Inspection {state.section15Complete ? " (✓)" : null}
+        </option>
+        <option value="16">
+          16. General Provision, Riders, Addendums{" "}
+          {state.section16Complete ? " (✓)" : null}
+        </option>
+        <option value="review">Review and Submit</option>
       </Select>
     </FormControl>
   );

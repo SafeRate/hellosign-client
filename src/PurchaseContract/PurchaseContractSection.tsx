@@ -1,9 +1,10 @@
 import { PurchaseContractSchema } from "../utils/PurchaseContractSchema";
 import validator from "@rjsf/validator-ajv6";
 import Form from "@rjsf/chakra-ui";
-import { Box, SimpleGrid } from "@chakra-ui/react";
+import { Box, Button, SimpleGrid } from "@chakra-ui/react";
 import { ObjectFieldTemplateProps } from "@rjsf/utils";
 import React from "react";
+import { Action, ActionType, PurchaseContractData } from "./PurchaseContract";
 
 const uiSchema = {
   columns: "",
@@ -32,8 +33,8 @@ const uiSchema = {
 };
 
 type PurchaseContractSectionArgs = {
-  currentSection: string;
-  setSection: React.Dispatch<React.SetStateAction<string>>;
+  state: PurchaseContractData;
+  dispatch: React.Dispatch<Action>;
 };
 
 function ObjectFieldTemplate(props: ObjectFieldTemplateProps) {
@@ -54,32 +55,84 @@ function ObjectFieldTemplate(props: ObjectFieldTemplateProps) {
   );
 }
 
-// function FieldTemplate(props: FieldTemplateProps) {
-//   const {
-//     id,
-//     classNames,
-//     label,
-//     help,
-//     required,
-//     description,
-//     errors,
-//     rawErrors,
-//     rawDescription,
-//     children,
-//   } = props;
-
-//   const hasErrors = Array.isArray(rawErrors) && rawErrors.length > 0;
-//   let errorStr = "";
-//   if (hasErrors) {
-//     errorStr = rawErrors.join(". ");
-//   }
-
-//   return <Box className={classNames}>{children}</Box>;
-// }
-
 export const PurchaseContractSection = (args: PurchaseContractSectionArgs) => {
-  const currentSection = args.currentSection;
-  const setSection = args.setSection;
+  const state = args.state;
+  const dispatch = args.dispatch;
+
+  const currentSection = state.currentSection;
+
+  if (currentSection === "review") {
+    const sections = [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "10",
+      "11",
+      "12",
+      "14",
+      "15",
+      "16",
+    ];
+
+    const sectionsWithMissingFields = [];
+
+    for (let s = 0; s < sections.length; s++) {
+      const section = sections[s];
+      const sectionSchema =
+        PurchaseContractSchema.properties[`section${section}`];
+      if (
+        Array.isArray(sectionSchema.required) &&
+        sectionSchema.required.length > 0
+      ) {
+        const missingRequireds = [];
+        for (let r = 0; r < sectionSchema.required.length; r++) {
+          const requiredKey = sectionSchema.required[r];
+          if (state.currentData.hasOwnProperty(requiredKey) === false) {
+            const fieldTitle = sectionSchema.properties[requiredKey].title;
+            missingRequireds.push(fieldTitle);
+          }
+        }
+
+        if (missingRequireds.length > 0) {
+          sectionsWithMissingFields.push({ section, missingRequireds });
+        }
+      }
+    }
+
+    console.log(sectionsWithMissingFields.length);
+
+    if (sectionsWithMissingFields.length === 0) {
+      return <Button>You're good to go! Create HelloSign now!</Button>;
+    } else {
+      return (
+        <Box>
+          {sectionsWithMissingFields.map((sectionWithMissingFields, swmf) => {
+            return (
+              <div key={swmf}>
+                {sectionWithMissingFields.section}:{" "}
+                {sectionWithMissingFields.missingRequireds.join(", ")}{" "}
+                <Button
+                  onClick={() =>
+                    dispatch({
+                      action: ActionType.ChangeSection,
+                      data: sectionWithMissingFields.section,
+                    })
+                  }
+                >
+                  Go
+                </Button>
+              </div>
+            );
+          })}
+        </Box>
+      );
+    }
+  }
 
   const sectionSchema =
     PurchaseContractSchema.properties[`section${currentSection}`];
@@ -90,15 +143,34 @@ export const PurchaseContractSection = (args: PurchaseContractSectionArgs) => {
     uiSchema.columns = "3";
   }
 
+  const formData = {};
+  const sectionProperties =
+    PurchaseContractSchema.properties[`section${state.currentSection}`]
+      .properties;
+
+  const sectionKeys = Object.keys(sectionProperties);
+  for (let sk = 0; sk < sectionKeys.length; sk++) {
+    const sectionKey = sectionKeys[sk];
+    if (state.currentData.hasOwnProperty(sectionKey)) {
+      // @ts-ignore
+      formData[sectionKey] = state.currentData[sectionKey];
+    }
+  }
+
   return (
     <div>
       <Form
-        formData={{}}
+        formData={formData}
         schema={sectionSchema}
         uiSchema={uiSchema}
         validator={validator}
         templates={{ ObjectFieldTemplate }}
-        onSubmit={({ formData }) => console.log(formData)}
+        onSubmit={({ formData }) =>
+          dispatch({
+            action: ActionType.SaveSection,
+            data: formData,
+          })
+        }
       />
     </div>
   );

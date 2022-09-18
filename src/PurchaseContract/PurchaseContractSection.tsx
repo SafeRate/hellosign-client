@@ -77,6 +77,13 @@ export const PurchaseContractSection = (args: PurchaseContractSectionArgs) => {
       "14",
       "15",
       "16",
+      "17",
+      "18",
+      "19",
+      "20",
+      "21",
+      "22",
+      "23",
     ];
 
     const sectionsWithMissingFields = [];
@@ -107,7 +114,11 @@ export const PurchaseContractSection = (args: PurchaseContractSectionArgs) => {
     console.log(sectionsWithMissingFields.length);
 
     if (sectionsWithMissingFields.length === 0) {
-      return <Button>You're good to go! Create HelloSign now!</Button>;
+      return (
+        <Button onClick={() => console.log(state.currentData)}>
+          You're good to go! Create a HelloSign now!
+        </Button>
+      );
     } else {
       return (
         <Box>

@@ -24,6 +24,7 @@ export const PurchaseContractNav = (args: PurchaseContractNavArgs) => {
           });
         }}
       >
+        <option value="review">Review and Submit</option>
         <option value="1">
           1. Property Information
           {state.section1Complete ? " (✓)" : null}
@@ -71,7 +72,27 @@ export const PurchaseContractNav = (args: PurchaseContractNavArgs) => {
           16. General Provision, Riders, Addendums{" "}
           {state.section16Complete ? " (✓)" : null}
         </option>
-        <option value="review">Review and Submit</option>
+        <option value="17">
+          17. Buyers {state.section17Complete ? " (✓)" : null}
+        </option>
+        <option value="18">
+          18. Sellers {state.section18Complete ? " (✓)" : null}
+        </option>
+        <option value="19">
+          19. Buyers Agent {state.section19Complete ? " (✓)" : null}
+        </option>
+        <option value="20">
+          20. Sellers Agent {state.section20Complete ? " (✓)" : null}
+        </option>
+        <option value="21">
+          21. Buyers Attorney {state.section21Complete ? " (✓)" : null}
+        </option>
+        <option value="22">
+          22. Sellers Attorney {state.section22Complete ? " (✓)" : null}
+        </option>
+        <option value="23">
+          23. Mortgage Lender {state.section23Complete ? " (✓)" : null}
+        </option>
       </Select>
     </FormControl>
   );

@@ -29,6 +29,13 @@ export type PurchaseContractData = {
   section14Complete: boolean;
   section15Complete: boolean;
   section16Complete: boolean;
+  section17Complete: boolean;
+  section18Complete: boolean;
+  section19Complete: boolean;
+  section20Complete: boolean;
+  section21Complete: boolean;
+  section22Complete: boolean;
+  section23Complete: boolean;
   currentData: any;
 };
 
@@ -54,7 +61,7 @@ const purchaseContractReducer: Reducer<PurchaseContractData, Action> = (
         let nextSection: string | number = currentSectionInt + 1;
         if (nextSection === 9 || nextSection === 13) {
           nextSection = nextSection + 1;
-        } else if (nextSection === 17) {
+        } else if (nextSection === 24) {
           nextSection = "review";
         }
 
@@ -106,6 +113,13 @@ const PurchaseContract = () => {
     section14Complete: false,
     section15Complete: false,
     section16Complete: false,
+    section17Complete: false,
+    section18Complete: false,
+    section19Complete: false,
+    section20Complete: false,
+    section21Complete: false,
+    section22Complete: false,
+    section23Complete: false,
     currentData: {},
   });
 

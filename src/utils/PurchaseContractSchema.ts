@@ -680,7 +680,7 @@ export const PurchaseContractSchema: any = {
     section16: {
       title: "",
       type: "object",
-      required: ["offerDate", "acceptanceDate"],
+      required: ["offerDate"],
       properties: {
         offerDate: {
           type: "string",
@@ -699,6 +699,366 @@ export const PurchaseContractSchema: any = {
         addendaNumbers: {
           type: "string",
           title: "Addenda numbers",
+        },
+      },
+    },
+    section17: {
+      title: "",
+      type: "object",
+      required: ["buyerFirstName", "buyerLastName", "buyerEmailAddress"],
+      properties: {
+        buyerFirstName: {
+          type: "string",
+          title: "Buyer first name",
+        },
+        buyerLastName: {
+          type: "string",
+          title: "Buyer last name",
+        },
+        buyerEmailAddress: {
+          type: "string",
+          title: "Buyer email address",
+        },
+        buyerAddress: {
+          type: "string",
+          title: "Buyer address",
+        },
+        buyerCity: {
+          type: "string",
+          title: "Buyer city",
+        },
+        buyerState: {
+          type: "string",
+          title: "Buyer state",
+        },
+        buyerZipCode: {
+          type: "string",
+          title: "Buyer zipcode",
+        },
+        buyerOfficePhone: {
+          type: "string",
+          title: "Buyer office phone",
+        },
+        buyerHomePhone: {
+          type: "string",
+          title: "Buyer home phone",
+        },
+        buyerCellPhone: {
+          type: "string",
+          title: "Buyer cell phone",
+        },
+        buyerFax: {
+          type: "string",
+          title: "Buyer fax",
+        },
+      },
+    },
+    section18: {
+      type: "object",
+      title: "",
+      required: ["sellerFirstName", "sellerLastName", "sellerEmailAddress"],
+      properties: {
+        sellerFirstName: {
+          type: "string",
+          title: "Seller first name",
+        },
+        sellerLastName: {
+          type: "string",
+          title: "Seller last name",
+        },
+        sellerEmailAddress: {
+          type: "string",
+          title: "Seller email address",
+        },
+        sellerAddress: {
+          type: "string",
+          title: "Seller address",
+        },
+        sellerCity: {
+          type: "string",
+          title: "Seller city",
+        },
+        sellerState: {
+          type: "string",
+          title: "Seller state",
+        },
+        sellerZipCode: {
+          type: "string",
+          title: "Seller zipcode",
+        },
+        sellerOfficePhone: {
+          type: "string",
+          title: "Seller office phone",
+        },
+        sellerHomePhone: {
+          type: "string",
+          title: "Seller home phone",
+        },
+        sellerCellPhone: {
+          type: "string",
+          title: "Seller cell phone",
+        },
+        sellerFax: {
+          type: "string",
+          title: "Seller fax",
+        },
+      },
+    },
+    section19: {
+      type: "object",
+      title: "",
+      required: [
+        "buyerAgentFirstName",
+        "buyerAgentLastName",
+        "buyerAgentEmailAddress",
+      ],
+      properties: {
+        buyerAgentFirstName: {
+          type: "string",
+          title: "Buyer Agent first name",
+        },
+        buyerAgentLastName: {
+          type: "string",
+          title: "Buyer Agent last name",
+        },
+        buyerAgentEmailAddress: {
+          type: "string",
+          title: "Buyer Agent email address",
+        },
+        buyerAgentMLSNumber: {
+          type: "string",
+          title: "Buyer Agent MLS #",
+        },
+        buyerAgentLicenseNumber: {
+          type: "string",
+          title: "Buyer Agent License #",
+        },
+        buyerAgentBrokerageCompanyName: {
+          type: "string",
+          title: "Buyer Agent Brokerage Name",
+        },
+        buyerAgentBrokerageMLSNumber: {
+          type: "string",
+          title: "Buyer Agent Brokerage MLS #",
+        },
+        buyerAgentBrokerageLicenseNumber: {
+          type: "string",
+          title: "Buyer Agent License #",
+        },
+        buyerAgentAddress: {
+          type: "string",
+          title: "Buyer Agent address",
+        },
+        buyerAgentCity: {
+          type: "string",
+          title: "Buyer Agent city",
+        },
+        buyerAgentState: {
+          type: "string",
+          title: "Buyer Agent state",
+        },
+        buyerAgentZipCode: {
+          type: "string",
+          title: "Buyer Agent zipcode",
+        },
+        buyerAgentOfficePhone: {
+          type: "string",
+          title: "Buyer Agent office phone",
+        },
+        buyerAgentCellPhone: {
+          type: "string",
+          title: "Buyer Agent cell phone",
+        },
+        buyerAgentFax: {
+          type: "string",
+          title: "Buyer Agent fax",
+        },
+      },
+    },
+    section20: {
+      type: "object",
+      title: "",
+      required: [
+        "sellerAgentFirstName",
+        "sellerAgentLastName",
+        "sellerAgentEmailAddress",
+      ],
+      properties: {
+        sellerAgentFirstName: {
+          type: "string",
+          title: "Seller Agent first name",
+        },
+        sellerAgentLastName: {
+          type: "string",
+          title: "Seller Agent last name",
+        },
+        sellerAgentEmailAddress: {
+          type: "string",
+          title: "Seller Agent email address",
+        },
+        sellerAgentMLSNumber: {
+          type: "string",
+          title: "Seller Agent MLS #",
+        },
+        sellerAgentLicenseNumber: {
+          type: "string",
+          title: "Seller Agent License #",
+        },
+        sellerAgentBrokerageCompanyName: {
+          type: "string",
+          title: "Seller Agent Brokerage Name",
+        },
+        sellerAgentBrokerageMLSNumber: {
+          type: "string",
+          title: "Seller Agent Brokerage MLS #",
+        },
+        sellerAgentBrokerageLicenseNumber: {
+          type: "string",
+          title: "Seller Agent License #",
+        },
+        sellerAgentAddress: {
+          type: "string",
+          title: "Seller Agent address",
+        },
+        sellerAgentCity: {
+          type: "string",
+          title: "Seller Agent city",
+        },
+        sellerAgentState: {
+          type: "string",
+          title: "Seller Agent state",
+        },
+        sellerAgentZipCode: {
+          type: "string",
+          title: "Seller Agent zipcode",
+        },
+        sellerAgentOfficePhone: {
+          type: "string",
+          title: "Seller Agent office phone",
+        },
+        sellerAgentCellPhone: {
+          type: "string",
+          title: "Seller Agent cell phone",
+        },
+        sellerAgentFax: {
+          type: "string",
+          title: "Seller Agent fax",
+        },
+      },
+    },
+    section21: {
+      type: "object",
+      title: "",
+      required: [],
+      properties: {
+        buyerAttorneyFirstName: {
+          type: "string",
+          title: "Buyer Attorney first name",
+        },
+        buyerAttorneyLastName: {
+          type: "string",
+          title: "Buyer Attorney last name",
+        },
+        buyerAttorneyEmailAddress: {
+          type: "string",
+          title: "Buyer Attorney email address",
+        },
+        buyerAttorneyAddress: {
+          type: "string",
+          title: "Buyer Attorney address",
+        },
+        buyerAttorneyCity: {
+          type: "string",
+          title: "Buyer Attorney city",
+        },
+        buyerAttorneyState: {
+          type: "string",
+          title: "Buyer Attorney state",
+        },
+        buyerAttorneyZipCode: {
+          type: "string",
+          title: "Buyer Attorney zipcode",
+        },
+        buyerAttorneyOfficePhone: {
+          type: "string",
+          title: "Buyer Attorney office phone",
+        },
+        buyerAttorneyCellPhone: {
+          type: "string",
+          title: "Buyer Attorney cell phone",
+        },
+        buyerAttorneyFax: {
+          type: "string",
+          title: "Buyer Attorney fax",
+        },
+      },
+    },
+    section22: {
+      type: "object",
+      title: "",
+      required: [],
+      properties: {
+        sellerAttorneyFirstName: {
+          type: "string",
+          title: "Seller Attorney first name",
+        },
+        sellerAttorneyLastName: {
+          type: "string",
+          title: "Seller Attorney last name",
+        },
+        sellerAttorneyEmailAddress: {
+          type: "string",
+          title: "Seller Attorney email address",
+        },
+        sellerAttorneyAddress: {
+          type: "string",
+          title: "Seller Attorney address",
+        },
+        sellerAttorneyCity: {
+          type: "string",
+          title: "Seller Attorney city",
+        },
+        sellerAttorneyState: {
+          type: "string",
+          title: "Seller Attorney state",
+        },
+        sellerAttorneyZipCode: {
+          type: "string",
+          title: "Seller Attorney zipcode",
+        },
+        sellerAttorneyOfficePhone: {
+          type: "string",
+          title: "Seller Attorney office phone",
+        },
+        sellerAttorneyCellPhone: {
+          type: "string",
+          title: "Seller Attorney cell phone",
+        },
+        sellerAttorneyFax: {
+          type: "string",
+          title: "Seller Attorney fax",
+        },
+      },
+    },
+    section23: {
+      type: "object",
+      title: "",
+      required: [],
+      properties: {
+        mortgageOriginatorFirstName: {
+          type: "string",
+          title: "Mortgage originator first name",
+          default: "Shima",
+        },
+        mortgageOriginatorLastName: {
+          type: "string",
+          title: "Mortgage originator last name",
+          default: "Rayej",
+        },
+        mortgageLenderEmail: {
+          type: "string",
+          title: "Mortgage email",
+          default: "team@saferate.com",
         },
         mortgageLender: {
           type: "string",
@@ -725,10 +1085,20 @@ export const PurchaseContractSchema: any = {
           title: "Mortgage lender zipcode",
           default: "60654",
         },
-        mortgageLenderEmail: {
+        mortgageLenderOfficePhone: {
           type: "string",
-          title: "Mortgage email",
-          default: "team@saferate.com",
+          title: "Mortgage lender office phone",
+          default: "312-248-0234",
+        },
+        mortgageLenderCellPhone: {
+          type: "string",
+          title: "Mortgage lender cell phone",
+          default: "312-248-0234",
+        },
+        mortgageLenderFax: {
+          type: "string",
+          title: "Mortgage lender fax",
+          default: "312-535-7089",
         },
       },
     },

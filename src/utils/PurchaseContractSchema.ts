@@ -11,7 +11,8 @@ export const PurchaseContractSchema: any = {
       properties: {
         propertyAddress: {
           type: "string",
-          title: "Property Address",
+          title:
+            "Property Address (e.g. 123 Main St, Unit 5, Pawnee, IL 62558)",
         },
         propertyPIN: {
           type: "string",
@@ -475,7 +476,7 @@ export const PurchaseContractSchema: any = {
       type: "object",
       required: [],
       properties: {
-        mortageCommitmentDate: {
+        mortgageCommitmentDate: {
           title: "Mortgage Committment Date",
           type: "string",
           format: "date",
@@ -842,7 +843,7 @@ export const PurchaseContractSchema: any = {
         },
         buyerAgentBrokerageLicenseNumber: {
           type: "string",
-          title: "Buyer Agent License #",
+          title: "Buyer Agent Brokerage License #",
         },
         buyerAgentAddress: {
           type: "string",

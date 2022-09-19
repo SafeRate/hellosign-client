@@ -125,7 +125,7 @@ export const PurchaseContractSection = (args: PurchaseContractSectionArgs) => {
           {sectionsWithMissingFields.map((sectionWithMissingFields, swmf) => {
             return (
               <div key={swmf}>
-                {sectionWithMissingFields.section}:{" "}
+                Section {sectionWithMissingFields.section}:{" "}
                 {sectionWithMissingFields.missingRequireds.join(", ")}{" "}
                 <Button
                   onClick={() =>

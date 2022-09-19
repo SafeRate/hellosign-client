@@ -301,7 +301,6 @@ export const PurchaseContractSchema: any = {
         },
         otherEquipmentText: {
           type: "string",
-          maxLength: "30",
           title: "Other equipment?",
         },
         hasFireplaceScreen: {
@@ -431,7 +430,7 @@ export const PurchaseContractSchema: any = {
         "initialEarnestAmount",
         "finalEarnestMoneyBusinessDays",
         "initialEarnestForm",
-        "notAcceptedDayMonth",
+        "notAcceptedDate",
         "finalEarnestMoneyType",
         "finalEarnestMoneyAmount",
       ],
@@ -450,7 +449,7 @@ export const PurchaseContractSchema: any = {
           title: "Form of initial earnest money",
           type: "string",
         },
-        notAcceptedDayMonth: {
+        notAcceptedDate: {
           title: "Earnest money acceptance date",
           type: "string",
           format: "date",
@@ -571,7 +570,7 @@ export const PurchaseContractSchema: any = {
         },
         propertyTaxAmount: {
           title: "Property tax amount",
-          type: "integer",
+          type: "number",
         },
         propertyTaxExemptionsHomeowner: {
           title: "Homeowner's Tax Exemption",
@@ -668,9 +667,9 @@ export const PurchaseContractSchema: any = {
     section15: {
       title: "",
       type: "object",
-      required: ["attorneyApprovalDays"],
+      required: ["inspectionPeriod"],
       properties: {
-        attorneyApprovalDays: {
+        inspectionPeriod: {
           type: "integer",
           title:
             "Inspection is within ____ business days after the acceptance date",
